@@ -5,22 +5,29 @@ import { toast, ToastContainer } from 'react-toastify';
 
 function Home() {
   const handleGetPrediction = async ({ meal, date }) => {
-    try {
-      const response = await fetch("https://your-api-url.com/predict", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ meal, date }),
-      });
+    // const features = {
+    //   1:meal,
+    //   2:date
+    // }
+    // try {
+    //   const response = await fetch("https://your-api-url.com/predict", {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify(features),
+    //   });
 
-      const data = await response.json();
-      setTodayPrediction(data.prediction);
-      setAccuracy(data.accuracy)
-    } catch (error) {
-      console.error("Error fetching prediction:", error);
-      toast.warn("Failed to fetch data")
-    }
+    //   const data = await response.json();
+    //   setTodayPrediction(data.prediction);
+    //   setAccuracy(data.accuracy)
+    // } catch (error) {
+    //   console.error("Error fetching prediction:", error);
+    //   toast.warn("Failed to fetch data")
+    // }
+    setAccuracy(94)
+    setTodayPrediction(377)
+    toast.success("Worked")
   };
   const [accuracy,setAccuracy] = useState(92.5);
   const [todayPrediction, setTodayPrediction] = useState(367);

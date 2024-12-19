@@ -41,15 +41,23 @@ const InputForm = ({ onGetPrediction }) => {
       {/* Date Selector */}
       <div className="mb-4">
         <label htmlFor="date" className="block text-sm font-medium text-gray-700 mb-1">
-          Select Date
+          Select Day
         </label>
-        <input
+        <select
           type="date"
           id="date"
           value={date}
           onChange={(e) => setDate(e.target.value)}
           className="w-full border border-gray-300 rounded-lg p-2 focus:ring-blue-500 focus:border-blue-500"
-        />
+        >
+          <option>Monday</option>
+          <option>Tuesday</option>
+          <option>Wednesday</option>
+          <option>Thursday</option>
+          <option>Friday</option>
+          <option>Saturday</option>
+          <option>Sunday</option>
+          </select>
       </div>
 
       {/* Get Prediction Button */}
